@@ -1,0 +1,108 @@
+name:                silverratio-jeopardy
+version:             0.1.0
+synopsis:            A quiz show game.
+description:         Please see README.md
+homepage:            http://github.com/mtesseract/silverratio-jeopardy#readme
+license:             GPL-3
+license-file:        LICENSE
+author:              Moritz Schulte
+maintainer:          mtesseract@silverratio.net
+copyright:           Moritz Schulte
+category:            Game
+build-type:          Simple
+cabal-version:       >=1.10
+Data-Files:            jeopardy.glade
+                     , Images/Boot.jpg
+                     , Images/Buzzed.png
+                     , Sounds/Button.ogg
+                     , Sounds/Closing.ogg
+                     , Sounds/DingLing.ogg
+                     , Sounds/Ding.ogg
+                     , Sounds/DoubleJeopardy.ogg
+                     , Sounds/Theme.ogg
+                     , Sounds/Timeout.ogg
+                     , Sounds/Woosh.ogg
+                     , Sounds/Wrong.ogg
+
+executable jeopardy
+  hs-source-dirs:      src
+  main-is:             jeopardy.hs
+  ghc-options:         -threaded -fno-ignore-asserts -Wall
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , text >=0.11.0
+                     , process >=1.1.0
+                     , bytestring >=0.9.0
+                     , containers >=0.4.0
+                     , temporary >=1.1.0
+                     , tar >=0.3.0
+                     , random >=1.0.0
+                     , directory >=1.1.0
+                     , mtl >=2.1.0
+                     , gtk >=0.12.0
+                     , unix >=2.5.0
+                     , pango >=0.12.0
+                     , glib >= 0.13.1.0
+  other-modules:       Jeopardy.Utils
+                     , Jeopardy.GUI
+                     , Jeopardy.Compiler
+                     , Jeopardy.Data
+                     , Paths_silverratio_jeopardy
+
+executable jeopardy-compiler
+  hs-source-dirs:      src
+  Main-is:             jeopardy-compiler.hs
+  ghc-options:         -fno-ignore-asserts -Wall
+  default-language:    Haskell2010
+  build-depends:       base >=4.5.0
+                     , text >=0.11.0
+                     , process >=1.1.0
+                     , bytestring >=0.9.0
+                     , containers >=0.4.0
+                     , temporary >=1.1.0
+                     , tar >=0.3.0
+                     , directory >=1.1.0
+                     , unix >=2.5.0
+                     , gtk >=0.12.0
+  other-modules:       Jeopardy.Data
+                     , Jeopardy.GUI
+                     , Jeopardy.Utils
+                     , Jeopardy.Compiler
+                     , Paths_silverratio_jeopardy
+
+executable jeopardy-dump
+  hs-source-dirs:      src
+  Main-is:             jeopardy-dump.hs
+  ghc-options:         -fno-ignore-asserts -Wall
+  default-language:    Haskell2010
+  build-depends:       base >=4.5.0
+                     , text >=0.11.0
+                     , process >=1.1.0
+                     , bytestring >=0.9.0
+                     , containers >=0.4.0
+                     , directory >=1.1.0
+  other-modules:        Jeopardy.Data
+                      , Jeopardy.GUI
+                      , Jeopardy.Utils
+                      , Jeopardy.Compiler
+
+executable jeopardy-editor
+  hs-source-dirs:      src
+  Main-is:             jeopardy-editor.hs
+  ghc-options:         -fno-ignore-asserts
+  default-language:    Haskell2010
+  build-depends:       base >=4.5.0
+                     , text >=0.11.0
+                     , process >=1.1.0
+                     , bytestring >=0.9.0
+                     , containers >=0.4.0
+                     , gtk >=0.12.0
+                     , mtl >=2.1.0
+                     , directory >=1.1.0
+                     , temporary >=1.1.0
+                     , unix >=2.5.0
+  other-modules:       Jeopardy.Data
+                     , Jeopardy.GUI
+                     , Jeopardy.Utils
+                     , Jeopardy.Compiler
+                     , Paths_silverratio_jeopardy
