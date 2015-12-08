@@ -89,6 +89,18 @@ are only placeholder files. They should be replaced by better audio
 files. (If you know of matching, free(!) audio effects, please tell
 me.)
 
+A Note on the Buzzers
+=====================
+
+I have built buzzers which -- from the point of view of the computer
+-- behave as a plain USB keyboard by soldering buzzers to a USB
+keyboard controller. Each buzzer sends a unique digit to the
+computer. Thus, the game simply reacts to digits send from a
+keyboard. In other words, you can simply press the digits on your
+keybaord to simulate buzzer presses. For this to work, the game admin
+interface must have the focus -- the other window, which is to be
+presented via beamer, should never have the focus while playing!
+
 Artwork
 =======
 
